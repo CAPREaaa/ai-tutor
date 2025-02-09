@@ -9,7 +9,7 @@
     let isPlaying = false;
     let playingIndex = null; // Track which message is playing
   
-    // Function to play text-to-speech for a specific AI message
+    // Function to play text-to-speech for a message
     function speak(text, index) {
       if ("speechSynthesis" in window) {
         // Stop any currently playing speech
