@@ -12,7 +12,7 @@ export async function POST({ request }) {
 
     console.log("✅ Received message:", message);
 
-    // 调用 OpenAI API
+    // Call OpenAI API
     const chatResponse = await openai.chat.completions.create({
       model: "gpt-4o",
       messages: [
@@ -23,7 +23,7 @@ export async function POST({ request }) {
 
     console.log("✅ OpenAI API Response:", chatResponse);
 
-    // 检查返回数据是否有效
+    // Invalid response from OpenAI API
     if (!chatResponse || !chatResponse.choices || chatResponse.choices.length === 0) {
       console.error("❌ OpenAI API did not return a valid response");
       return json({ error: "No valid response from AI" }, { status: 500 });
